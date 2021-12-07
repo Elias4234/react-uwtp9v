@@ -6,32 +6,32 @@ import Usuario from "./Usuario.js";
 import "./App.css";
 
 function App() {
- Const [contactos, setContactos] = useState([]);
+ Const [usuarios, setUsuarios] = useState([]);
 
- function agregarNuevoContacto(contacto){
-  cargarContactos();
+ function agregarNuevoUsuario(usuario){
+  cargarUsuarios();
  }
- function cargarContactos(){
+ function cargarUsuarios(){
   const listado = [];
-  baseDeDato.collection('contactos').get()
+  baseDeDato.collection('usuarios').get()
   .then(resultado =>{
-   resultado.forEach(contacto => {
-     listado.push(contacto.data());
+   resultado.forEach(usuario => {
+     listado.push(usuario.data());
     })
-   setContactos(listado);
+   setUsuarios(listado);
  }).catch(error => console.log(error));
  }
  
- useEffect(cargarContactos,[]);
+ useEffect(cargarUsuarios,[]);
   
  return (
     <div className = "App">
       <header className = "App-header">
-        <ContactoNuevo agregarNuevoContacto={agregarNuevoContacto} />
+        <UsuarioNuevo agregarNuevoUsuario={agregarNuevoUsuario} />
         {
-          contactos && contactos.length && contactos.slice().reverse().map((contacto,i) => {
-            const {nombre, apellido, telefono} = contacto;
-            return (<Contacto key = {i} nombre ={nombre} apellido = {apellido} telefono = {telefono}/>)
+          usuarios && usuarios.length && usuario.slice().reverse().map((usuario,i) => {
+            const {nombre, apellido, telefono} = usuario;
+            return (<Usuario key = {i} nombre ={nombre} apellido = {apellido} telefono = {telefono}/>)
           })
         }
       </header>
