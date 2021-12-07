@@ -1,5 +1,10 @@
-<div id="root"></div>
-<html>
+import React, { Component } from "react";
+
+
+class App extends Component{
+  render(){
+  return 
+   <html>
      <head>
       <title> Primer pagina web</title>
       <meta name = "Descripcion" content = "" />
@@ -42,3 +47,5 @@
        <p> </p>
      </body>
    </html>
+  }
+};

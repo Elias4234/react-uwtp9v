@@ -1,11 +1,13 @@
-import React from "react";
-import "./index.css";
+import React, { Component } from "react";
+import "./App.css";
+import "./Inicio.js";
 
-export default function App() {
-  return (
-    <div>
-      <h1>Hello StackBlitz!</h1>
-      <p>Start editing to see some magic happen :)</p>
-    </div>
-  );
+class App extends Component{
+  
+  render(){
+    return 
+     
+  }
 }
+
+export default App;
